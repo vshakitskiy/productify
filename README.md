@@ -1,3 +1,5 @@
+<img src="https://github.com/vshakitskiy/productify/preview.jpg" align="center">
+
 # With ♥ by vshakitskiy
 <p align="center">
   <a href="https://skillicons.dev">
