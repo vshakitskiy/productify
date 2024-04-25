@@ -4,16 +4,16 @@ import { debounce } from "lodash-es"
 import { useLayoutEffect, useState } from "react"
 
 const useIsMobile = (screenSize: number) => {
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(true)
 
   useLayoutEffect(() => {
     const updateSize = () =>
       setIsMobile(window.innerWidth < screenSize)
-    
+
     window.addEventListener("resize", debounce(updateSize, 250))
 
     return () =>
-      window.removeEventListener("resize", updateSize)
+      window.removeEventListener("resize", debounce(updateSize, 250))
   }, [screenSize])
 
   return isMobile

@@ -14,10 +14,12 @@ import { debounce } from "lodash-es"
 import DropdownFilter from "@/components/Filters/DropdownFilter"
 import { AxiosProduct } from "@/lib/types"
 import useIsMobile from "@/lib/hooks/useIsMobile"
+import Theme from "@/components/Theme"
 
 export const Home = () => {
   const [sheet, setSheet] = useState(false)
   const isMobile = useIsMobile(1024)
+
   const [filter, setFilter] = useState<ProductState>({
     sort: "none",
     color: ["white", "beige", "blue", "green", "purple"],
@@ -50,18 +52,19 @@ export const Home = () => {
 
   return (
     <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="flex items-center justify-between border-b border-gray-200 pb-6 pt-24">
-        <h1 className="text-4xl font-bold pr-3 tracking-tight text-gray-900">
+      <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-6 pt-24">
+        <h1 className="text-4xl font-bold pr-3 tracking-tight text-gray-900 dark:text-gray-100">
           Productify
         </h1>
         <div className="flex items-center">
+          <Theme />
           <DropdownFilter 
             filterState={[filter, setFilter]}
             debouncedSubmit={_debouncedSubmit}
           />
           <Sheet open={sheet && isMobile} onOpenChange={setSheet}>
             <SheetTrigger asChild>
-              <button className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-5 lg:hidden">
+              <button className="-m-2 ml-3 p-2 text-gray-400 dark:text-gray-100 hover:text-gray-500 dark:hover:text-gray-300 lg:hidden">
                 <FilterIcon className="h-5 w-5" />
               </button>
             </SheetTrigger>

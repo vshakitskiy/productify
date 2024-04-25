@@ -79,7 +79,7 @@ const Filter = ({ filterState, debouncedSubmit }: FiltersProps) => {
 
   return (
     <>
-      <ul className="space-y-4 border-b border-gray-200 pb-6 text-sm-sm font-medium text-gray-900">
+      <ul className="space-y-4 border-b border-gray-200 dark:border-gray-500 pb-6 text-sm-sm font-medium text-gray-900 dark:text-gray-200">
         {SUBCATEGORIES.map((category) => (
           <li key={category.name}>
             <button 
@@ -93,8 +93,8 @@ const Filter = ({ filterState, debouncedSubmit }: FiltersProps) => {
       </ul>
       <Accordion type="multiple" className="animate-none">
         <AccordionItem value="color">
-          <AccordionTrigger className="py-3 text-sm text-gray-400 hover:text-gray-500">
-            <span className="font-medium text-gray-900">Color</span>
+          <AccordionTrigger className="py-3 text-sm text-gray-400 dark:text-gray-300 hover:text-gray-500">
+            <span className="font-medium text-gray-900 dark:text-gray-100">Color</span>
           </AccordionTrigger>
           <AccordionContent className="pt-6 animate-none">
             <ul className="space-y-4">
@@ -115,7 +115,7 @@ const Filter = ({ filterState, debouncedSubmit }: FiltersProps) => {
                     id={`color-${i}`} 
                     className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"  
                   />
-                  <label htmlFor={`color-${i}`} className="ml-3 text-sm text-gray-600">
+                  <label htmlFor={`color-${i}`} className="ml-3 text-sm text-gray-600 dark:text-gray-300">
                     {option.label}
                   </label>
                 </li>
@@ -125,8 +125,8 @@ const Filter = ({ filterState, debouncedSubmit }: FiltersProps) => {
         </AccordionItem>
               
         <AccordionItem value="size">
-          <AccordionTrigger className="py-3 text-sm text-gray-400 hover:text-gray-500">
-            <span className="font-medium text-gray-900">Size</span>
+          <AccordionTrigger className="py-3 text-sm text-gray-400 dark:text-gray-300 hover:text-gray-500">
+            <span className="font-medium text-gray-900 dark:text-gray-100">Size</span>
           </AccordionTrigger>
           <AccordionContent className="pt-6 animate-none">
             <ul className="space-y-4">
@@ -147,7 +147,7 @@ const Filter = ({ filterState, debouncedSubmit }: FiltersProps) => {
                     id={`size-${i}`} 
                     className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"  
                   />
-                  <label htmlFor={`size-${i}`} className="ml-3 text-sm text-gray-600">
+                  <label htmlFor={`size-${i}`} className="ml-3 text-sm text-gray-600 dark:text-gray-300">
                     {option.label}
                   </label>
                 </li>
@@ -157,8 +157,8 @@ const Filter = ({ filterState, debouncedSubmit }: FiltersProps) => {
         </AccordionItem>
 
         <AccordionItem value="price">
-          <AccordionTrigger className="py-3 text-sm text-gray-400 hover:text-gray-500">
-            <span className="font-medium text-gray-900">Price</span>
+          <AccordionTrigger className="py-3 text-sm text-gray-400 dark:text-gray-300 hover:text-gray-500">
+            <span className="font-medium text-gray-900 dark:text-gray-100">Price</span>
           </AccordionTrigger>
           <AccordionContent className="pt-6 animate-none">
             <ul className="space-y-4">
@@ -187,7 +187,7 @@ const Filter = ({ filterState, debouncedSubmit }: FiltersProps) => {
                     id={`price-${i}`} 
                     className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"  
                   />
-                  <label htmlFor={`price-${i}`} className="ml-3 text-sm text-gray-600">
+                  <label htmlFor={`price-${i}`} className="ml-3 text-sm text-gray-600 dark:text-gray-300">
                     {option.label}
                   </label>
                 </li>
@@ -210,13 +210,13 @@ const Filter = ({ filterState, debouncedSubmit }: FiltersProps) => {
                     id={`price-${PRICE_FILTERS.options.length}`} 
                     className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"  
                   />
-                  <label htmlFor={`price-${PRICE_FILTERS.options.length}`} className="ml-3 text-sm text-gray-600">
+                  <label htmlFor={`price-${PRICE_FILTERS.options.length}`} className="ml-3 text-sm text-gray-600 dark:text-gray-300">
                           Custom
                   </label>
                 </div>
-                <div className="flex justify-between">
-                  <p className="font-medium">Price</p>
-                  <div>
+                <div className="flex justify-between mb-2">
+                  <p className="font-medium dark:text-gray-300">Price</p>
+                  <div className="dark:text-gray-300">
                     {filter.price.isCustom 
                       ? minPrice.toFixed(0) 
                       : filter.price.range[0].toFixed(0)
