@@ -16,7 +16,7 @@ import { AxiosProduct } from "@/lib/types"
 import useIsMobile from "@/lib/hooks/useIsMobile"
 import Theme from "@/components/Theme"
 
-export const Home = () => {
+const Home = () => {
   const [sheet, setSheet] = useState(false)
   const isMobile = useIsMobile(1024)
 
@@ -48,7 +48,7 @@ export const Home = () => {
   })
 
   const debouncedSubmit = debounce(() => refetch(), 500)
-  const _debouncedSubmit = useCallback(debouncedSubmit, [debouncedSubmit])
+  const _debouncedSubmit = useCallback(debouncedSubmit, [])
 
   return (
     <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
