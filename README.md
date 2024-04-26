@@ -24,6 +24,7 @@ Productify is a full-stack filtering system project. The aim of the project was 
 # .env.example
 UPSTASH_VECTOR_REST_URL=
 UPSTASH_VECTOR_REST_TOKEN=
+NEXT_PUBLIC_URL=
 ```
 2) Run the seed file:
 ```bash
