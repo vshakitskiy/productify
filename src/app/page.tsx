@@ -34,7 +34,7 @@ const Home = () => {
     queryKey: ["products"],
     queryFn: async () => {
       const { data } = await axios.post<AxiosProduct>(
-        `${process.env.NEXT_PUBLIC_URL}/api/products`, {
+        "/api/products", {
           filter: {
             sort: filter.sort,
             color: filter.color,
